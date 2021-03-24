@@ -2,6 +2,9 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import {TestComponent} from './TestComponent'
+import {TestComponent} from './TestComponent';
+import { helloworld } from 'context';
 
-storiesOf('Welcome', module).add('TestComponent', () => <TestComponent />);
+storiesOf('TestComponent', module)
+  .add('test', () => <TestComponent>{`${helloworld} from storybook`}</TestComponent>)
+  .add('test with defaultText', () => <TestComponent/>);

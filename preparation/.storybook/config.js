@@ -1,7 +1,8 @@
 import { configure } from '@storybook/react';
+import requireContext from 'require-context.macro';
 
 
-const req = require.context('../src', true, /\.stories\.(js|ts|tsx)$/);
+const req = requireContext('../src', true, /\.stories\.(js|ts|tsx)$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
